@@ -1,0 +1,8 @@
+{
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/admin/students/page": "app/admin/students/page.js",
+  "/conductor/dashboard/page": "app/conductor/dashboard/page.js",
+  "/parent/dashboard/page": "app/parent/dashboard/page.js",
+  "/parent/students/new/page": "app/parent/students/new/page.js",
+  "/parent/students/page": "app/parent/students/page.js"
+}

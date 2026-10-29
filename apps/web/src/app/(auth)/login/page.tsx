@@ -3,6 +3,14 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
+import { User, Bus, Shield } from "lucide-react";
+
+// ⚠️ PUT YOUR REAL TEST CREDENTIALS HERE
+const DEMO_USERS = {
+  parent: { email: "test@parent.com", password: "password123" },
+  conductor: { email: "conductor@test.com", password: "password123" },
+  admin: { email: "admin@test.com", password: "password123" },
+};
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -13,19 +21,22 @@ export default function LoginPage() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    await performLogin(email, password);
+  };
+
+  const performLogin = async (loginEmail: string, loginPassword: string) => {
     setIsLoading(true);
     setError("");
 
     const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
+      email: loginEmail,
+      password: loginPassword,
     });
 
     if (error) {
       setError(error.message);
       setIsLoading(false);
     } else {
-      // Check the user's role from metadata
       const role = data.user?.user_metadata?.role;
 
       if (role === "admin") {
@@ -33,10 +44,17 @@ export default function LoginPage() {
       } else if (role === "conductor") {
         router.push("/conductor/dashboard");
       } else {
-        // Default to parent if no role is set
         router.push("/parent/dashboard");
       }
     }
+  };
+
+  // Quick login function for demo buttons
+  const handleDemoLogin = (role: "parent" | "conductor" | "admin") => {
+    const user = DEMO_USERS[role];
+    setEmail(user.email);
+    setPassword(user.password);
+    performLogin(user.email, user.password);
   };
 
   return (
@@ -90,6 +108,39 @@ export default function LoginPage() {
             {isLoading ? "Logging in..." : "Log In"}
           </button>
         </form>
+
+        {/* DEMO BUTTONS */}
+        <div className="mt-8 pt-6 border-t border-gray-100">
+          <p className="text-center text-xs font-medium text-gray-400 mb-4 uppercase tracking-wider">
+            Quick Demo Login
+          </p>
+          <div className="grid grid-cols-3 gap-2">
+            <button
+              onClick={() => handleDemoLogin("parent")}
+              disabled={isLoading}
+              className="flex flex-col items-center justify-center p-3 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg transition"
+            >
+              <User size={20} className="mb-1" />
+              <span className="text-xs font-bold">Parent</span>
+            </button>
+            <button
+              onClick={() => handleDemoLogin("conductor")}
+              disabled={isLoading}
+              className="flex flex-col items-center justify-center p-3 bg-green-50 hover:bg-green-100 text-green-700 rounded-lg transition"
+            >
+              <Bus size={20} className="mb-1" />
+              <span className="text-xs font-bold">Conductor</span>
+            </button>
+            <button
+              onClick={() => handleDemoLogin("admin")}
+              disabled={isLoading}
+              className="flex flex-col items-center justify-center p-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition"
+            >
+              <Shield size={20} className="mb-1" />
+              <span className="text-xs font-bold">Admin</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -81,8 +81,8 @@ function ParentDashboard() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$components$2f$parent$2f$StudentStatusCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         studentName: "Aarav Sharma",
                                         grade: "5-A",
-                                        routeName: "Route 7 - Green Park",
-                                        stopName: "Green Park Main Gate",
+                                        routeName: "Route 7 - Bhubaneswar",
+                                        stopName: "Master Canteen",
                                         status: "BOARDED",
                                         etaMinutes: 12
                                     }, void 0, false, {
@@ -93,8 +93,8 @@ function ParentDashboard() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$components$2f$parent$2f$StudentStatusCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         studentName: "Diya Sharma",
                                         grade: "3-B",
-                                        routeName: "Route 7 - Green Park",
-                                        stopName: "Green Park Main Gate",
+                                        routeName: "Route 7 - Bhubaneswar",
+                                        stopName: "Master Canteen",
                                         status: "PENDING"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/app/parent/dashboard/page.tsx",

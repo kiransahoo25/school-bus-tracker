@@ -84,6 +84,7 @@ export default function AdminStudentsPage() {
                   <td className="px-6 py-4">
                     {student.grade} - {student.section}
                   </td>
+                  {/* The database will now return "Route 7 - Bhubaneswar" based on the SQL we ran */}
                   <td className="px-6 py-4">
                     {student.route_name || "No Route"}
                   </td>

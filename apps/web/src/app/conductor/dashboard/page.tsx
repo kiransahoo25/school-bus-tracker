@@ -62,7 +62,7 @@ export default function ConductorDashboard() {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({
-                    busId: "KA-01-AB-1234",
+                    busId: "OD-02-AB-1234",
                     lat: latitude,
                     lng: longitude,
                   }),
@@ -78,7 +78,7 @@ export default function ConductorDashboard() {
           },
           { enableHighAccuracy: true },
         );
-      }, 5000); // Send every 5 seconds
+      }, 5000);
     };
 
     startTracking();
@@ -128,11 +128,12 @@ export default function ConductorDashboard() {
       <div className="bg-white rounded-xl shadow-sm border p-6 mb-6">
         <div className="flex justify-between items-start">
           <div>
+            {/* UPDATED TEXT HERE */}
             <h1 className="text-2xl font-bold text-gray-900">
-              Route 7 - Green Park
+              Route 7 - Bhubaneswar
             </h1>
             <p className="text-gray-500 flex items-center gap-2 mt-1">
-              <MapPin size={16} /> Bus KA-01-AB-1234 • Morning Trip
+              <MapPin size={16} /> Bus OD-02-AB-1234 • Morning Trip
             </p>
           </div>
           <div className="flex flex-col items-end gap-2">

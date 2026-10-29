@@ -29,16 +29,16 @@ export default function ParentDashboard() {
             <StudentStatusCard
               studentName="Aarav Sharma"
               grade="5-A"
-              routeName="Route 7 - Green Park"
-              stopName="Green Park Main Gate"
+              routeName="Route 7 - Bhubaneswar"
+              stopName="Master Canteen"
               status="BOARDED"
               etaMinutes={12}
             />
             <StudentStatusCard
               studentName="Diya Sharma"
               grade="3-B"
-              routeName="Route 7 - Green Park"
-              stopName="Green Park Main Gate"
+              routeName="Route 7 - Bhubaneswar"
+              stopName="Master Canteen"
               status="PENDING"
             />
           </div>

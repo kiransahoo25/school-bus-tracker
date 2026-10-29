@@ -453,3 +453,15 @@ FAM | META SEQ | SST SEQ         | RANGE
   3 | 00000237 | 00000233 SST    |     [=================================]                                                              | 0b8c060ff3dd1a69-624efc56d1fa10fd (0 MiB, fresh, 57 bytes, 2 entries, 0 tombstones)
   2 | 00000238 | 00000232 SST    | [==================================================================================================] | 023c72ebb9479138-fe1d445d3e2201ae (0 MiB, fresh, 66184 bytes, 92 entries, 0 tombstones)
   1 | 00000239 | 00000234 SST    | [==================================================================================================] | 00b25cda1cf37b57-ffe55de8799f3aa8 (1 MiB, fresh, 1248740 bytes, 2072 entries, 0 tombstones)
+Time 2026-10-29T15:48:47.743015Z
+Commit 00000245 2934 keys in 35ms 625µs
+FAM | META SEQ | SST SEQ         | RANGE
+  0 | 00000243 | 00000242 SST    |                                                                             O                        | c44bdff4074eecdb-c44bdff4074eecdb (0 MiB, fresh, 38 bytes, 1 entries, 0 tombstones)
+  2 | 00000244 | 00000240 SST    |  [=================================================================================================] | 03c1cd827ecc6a1e-ffead1222f6f3ab5 (0 MiB, fresh, 30646 bytes, 121 entries, 0 tombstones)
+  1 | 00000245 | 00000241 SST    | [==================================================================================================] | 006ebbae5202dcd3-ffead1222f6f3ab5 (1 MiB, fresh, 1520453 bytes, 2812 entries, 0 tombstones)
+Time 2026-10-29T15:54:55.710857Z
+Commit 00000251 2043 keys in 29ms 538µs
+FAM | META SEQ | SST SEQ         | RANGE
+  0 | 00000249 | 00000248 SST    |                                                                             O                        | c44bdff4074eecdb-c44bdff4074eecdb (0 MiB, fresh, 38 bytes, 1 entries, 0 tombstones)
+  2 | 00000250 | 00000246 SST    |  [=================================================================================================] | 03c1cd827ecc6a1e-feccf569c7520028 (0 MiB, fresh, 26140 bytes, 90 entries, 0 tombstones)
+  1 | 00000251 | 00000247 SST    | [==================================================================================================] | 00b25cda1cf37b57-ffe55de8799f3aa8 (1 MiB, fresh, 1228302 bytes, 1952 entries, 0 tombstones)

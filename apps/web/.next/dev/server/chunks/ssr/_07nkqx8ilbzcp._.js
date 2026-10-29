@@ -27,7 +27,7 @@ function ConductorDashboard() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const fetchStudents = async ()=>{
             try {
-                const response = await fetch(`http://localhost:5000/api/v1/trips/${DEMO_TRIP_ID}/students`);
+                const response = await fetch(`https://school-bus-api-c3x7.onrender.com/api/v1/trips/${DEMO_TRIP_ID}/students`);
                 const data = await response.json();
                 if (data.success) {
                     setStudents(data.data);
@@ -53,7 +53,7 @@ function ConductorDashboard() {
                     const { latitude, longitude } = position.coords;
                     setGpsStatus("Live (Sending)");
                     try {
-                        await fetch("http://localhost:5000/api/v1/telemetry/update", {
+                        await fetch("https://school-bus-api-c3x7.onrender.com/api/v1/telemetry/update", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"
@@ -92,7 +92,7 @@ function ConductorDashboard() {
         }
         setIsLoading(studentId);
         try {
-            await fetch("http://localhost:5000/api/v1/boarding/verify", {
+            await fetch("https://school-bus-api-c3x7.onrender.com/api/v1/boarding/verify", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -114,7 +114,7 @@ function ConductorDashboard() {
         children: "Loading roster..."
     }, void 0, false, {
         fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-        lineNumber: 117,
+        lineNumber: 123,
         columnNumber: 7
     }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -131,7 +131,7 @@ function ConductorDashboard() {
                                     children: "Route 7 - Green Park"
                                 }, void 0, false, {
                                     fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                    lineNumber: 125,
+                                    lineNumber: 131,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -141,20 +141,20 @@ function ConductorDashboard() {
                                             size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 135,
                                             columnNumber: 15
                                         }, this),
                                         " Bus KA-01-AB-1234 • Morning Trip"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                    lineNumber: 128,
+                                    lineNumber: 134,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                            lineNumber: 124,
+                            lineNumber: 130,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -167,14 +167,14 @@ function ConductorDashboard() {
                                             size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                            lineNumber: 134,
+                                            lineNumber: 140,
                                             columnNumber: 15
                                         }, this),
                                         " On Route"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                    lineNumber: 133,
+                                    lineNumber: 139,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -185,24 +185,24 @@ function ConductorDashboard() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                    lineNumber: 136,
+                                    lineNumber: 142,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                            lineNumber: 132,
+                            lineNumber: 138,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                    lineNumber: 123,
+                    lineNumber: 129,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                lineNumber: 122,
+                lineNumber: 128,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -216,7 +216,7 @@ function ConductorDashboard() {
                                 children: "Boarding Checklist"
                             }, void 0, false, {
                                 fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                lineNumber: 145,
+                                lineNumber: 151,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -229,13 +229,13 @@ function ConductorDashboard() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                lineNumber: 146,
+                                lineNumber: 152,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                        lineNumber: 144,
+                        lineNumber: 150,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -251,14 +251,14 @@ function ConductorDashboard() {
                                         size: 28
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                        lineNumber: 163,
+                                        lineNumber: 169,
                                         columnNumber: 19
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Circle$3e$__["Circle"], {
                                         className: "text-gray-300",
                                         size: 28
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                        lineNumber: 165,
+                                        lineNumber: 171,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -269,7 +269,7 @@ function ConductorDashboard() {
                                                 children: student.name
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                                lineNumber: 169,
+                                                lineNumber: 175,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -282,13 +282,13 @@ function ConductorDashboard() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                                lineNumber: 174,
+                                                lineNumber: 180,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                        lineNumber: 168,
+                                        lineNumber: 174,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -296,31 +296,31 @@ function ConductorDashboard() {
                                         children: isBoarded ? "Boarded" : "Mark Boarded"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                        lineNumber: 179,
+                                        lineNumber: 185,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, student.id, true, {
                                 fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                                lineNumber: 155,
+                                lineNumber: 161,
                                 columnNumber: 15
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                        lineNumber: 151,
+                        lineNumber: 157,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-                lineNumber: 143,
+                lineNumber: 149,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/web/src/app/conductor/dashboard/page.tsx",
-        lineNumber: 121,
+        lineNumber: 127,
         columnNumber: 5
     }, this);
 }

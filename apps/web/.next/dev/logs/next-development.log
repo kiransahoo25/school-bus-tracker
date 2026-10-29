@@ -670,3 +670,5 @@
 {"timestamp":"01:09:08.645","source":"Server","level":"ERROR","message":"[browser] \"Error getting location:\" \"\" \"\\n\\u001b[31m\\u001b[39m\""}
 {"timestamp":"01:09:08.645","source":"Browser","level":"ERROR","message":"Error getting location:  \n"}
 {"timestamp":"01:09:08.645","source":"Server","level":"ERROR","message":"[browser] \"Error getting location:\" \"\" \"\\n\\u001b[31m\\u001b[39m\""}
+{"timestamp":"01:52:36.841","source":"Server","level":"LOG","message":"✓ Compiled in 113ms"}
+{"timestamp":"01:55:27.444","source":"Server","level":"LOG","message":"✓ Compiled in 22ms"}

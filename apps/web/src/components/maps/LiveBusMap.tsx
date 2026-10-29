@@ -25,7 +25,7 @@ export default function LiveBusMap() {
   const [alert, setAlert] = useState<string | null>(null);
 
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:5000/ws");
+    const ws = new WebSocket("wss://school-bus-api-c3x7.onrender.com/ws");
 
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data);

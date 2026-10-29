@@ -24,7 +24,7 @@ export default function ConductorDashboard() {
     const fetchStudents = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/v1/trips/${DEMO_TRIP_ID}/students`,
+          `https://school-bus-api-c3x7.onrender.com/api/v1/trips/${DEMO_TRIP_ID}/students`,
         );
         const data = await response.json();
         if (data.success) {
@@ -56,15 +56,18 @@ export default function ConductorDashboard() {
             setGpsStatus("Live (Sending)");
 
             try {
-              await fetch("http://localhost:5000/api/v1/telemetry/update", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                  busId: "KA-01-AB-1234",
-                  lat: latitude,
-                  lng: longitude,
-                }),
-              });
+              await fetch(
+                "https://school-bus-api-c3x7.onrender.com/api/v1/telemetry/update",
+                {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    busId: "KA-01-AB-1234",
+                    lat: latitude,
+                    lng: longitude,
+                  }),
+                },
+              );
             } catch (err) {
               console.error("Failed to send GPS", err);
             }
@@ -96,15 +99,18 @@ export default function ConductorDashboard() {
     setIsLoading(studentId);
 
     try {
-      await fetch("http://localhost:5000/api/v1/boarding/verify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          studentId: studentId,
-          tripId: DEMO_TRIP_ID,
-          eventType: isCurrentlyBoarded ? "UNVERIFIED" : "BOARDED",
-        }),
-      });
+      await fetch(
+        "https://school-bus-api-c3x7.onrender.com/api/v1/boarding/verify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            studentId: studentId,
+            tripId: DEMO_TRIP_ID,
+            eventType: isCurrentlyBoarded ? "UNVERIFIED" : "BOARDED",
+          }),
+        },
+      );
     } catch (error) {
       console.error("Failed to save to database", error);
     } finally {

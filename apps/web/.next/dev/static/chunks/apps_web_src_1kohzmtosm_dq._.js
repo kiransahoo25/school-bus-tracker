@@ -165,13 +165,15 @@ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$leaflet$2f$dist$
 });
 function LiveBusMap() {
     _s();
+    // 1. Initial starting location: Master Canteen, Bhubaneswar
     const [busLocation, setBusLocation] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
-        lat: 12.9352,
-        lng: 77.6245
+        lat: 20.2961,
+        lng: 85.8245
     });
     const [alert, setAlert] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "LiveBusMap.useEffect": ()=>{
+            // 2. Connect to the live backend WebSocket
             const ws = new WebSocket("wss://school-bus-api-c3x7.onrender.com/ws");
             ws.onmessage = ({
                 "LiveBusMap.useEffect": (event)=>{
@@ -184,7 +186,6 @@ function LiveBusMap() {
                     }
                     if (data.type === "ALERT") {
                         setAlert(data.message);
-                        // Hide alert after 6 seconds
                         setTimeout({
                             "LiveBusMap.useEffect": ()=>setAlert(null)
                         }["LiveBusMap.useEffect"], 6000);
@@ -207,7 +208,7 @@ function LiveBusMap() {
                         className: "flex-shrink-0"
                     }, void 0, false, {
                         fileName: "[project]/apps/web/src/components/maps/LiveBusMap.tsx",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -215,13 +216,13 @@ function LiveBusMap() {
                         children: alert
                     }, void 0, false, {
                         fileName: "[project]/apps/web/src/components/maps/LiveBusMap.tsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/web/src/components/maps/LiveBusMap.tsx",
-                lineNumber: 51,
+                lineNumber: 52,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -242,7 +243,7 @@ function LiveBusMap() {
                             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                         }, void 0, false, {
                             fileName: "[project]/apps/web/src/components/maps/LiveBusMap.tsx",
-                            lineNumber: 63,
+                            lineNumber: 64,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$leaflet$2f$lib$2f$Marker$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Marker"], {
@@ -251,36 +252,36 @@ function LiveBusMap() {
                                 busLocation.lng
                             ],
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$leaflet$2f$lib$2f$Popup$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Popup"], {
-                                children: "Bus KA-01-AB-1234 is here!"
+                                children: "Bus OD-02-AB-1234 is here!"
                             }, void 0, false, {
                                 fileName: "[project]/apps/web/src/components/maps/LiveBusMap.tsx",
-                                lineNumber: 68,
+                                lineNumber: 70,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/apps/web/src/components/maps/LiveBusMap.tsx",
-                            lineNumber: 67,
+                            lineNumber: 68,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/web/src/components/maps/LiveBusMap.tsx",
-                    lineNumber: 58,
+                    lineNumber: 59,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/apps/web/src/components/maps/LiveBusMap.tsx",
-                lineNumber: 57,
+                lineNumber: 58,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/web/src/components/maps/LiveBusMap.tsx",
-        lineNumber: 48,
+        lineNumber: 49,
         columnNumber: 5
     }, this);
 }
-_s(LiveBusMap, "W3A10GgHocoAgrNJEL+oJCWXrek=");
+_s(LiveBusMap, "g+Rh8Oae2TDpH5zE+izMHDtkHi8=");
 _c = LiveBusMap;
 var _c;
 __turbopack_context__.k.register(_c, "LiveBusMap");

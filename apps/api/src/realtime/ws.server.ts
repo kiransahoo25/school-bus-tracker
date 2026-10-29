@@ -1,14 +1,13 @@
 import { WebSocketServer, WebSocket } from "ws";
 import { Server } from "http";
 
+// Starting location: Master Canteen, Bhubaneswar
 let currentBusLocation = {
-  lat: 12.9352,
-  lng: 77.6245,
+  lat: 20.2961,
+  lng: 85.8245,
 };
 
-// We need to track if we already sent the alert so we don't spam the parent
 let alertSent = false;
-
 let wss: WebSocketServer;
 
 export const setupWebSocket = (server: Server) => {
@@ -17,11 +16,10 @@ export const setupWebSocket = (server: Server) => {
   wss.on("connection", (ws: WebSocket) => {
     console.log("📱 New client connected to WebSocket");
 
-    // Send current location immediately
     ws.send(
       JSON.stringify({
         type: "BUS_LOCATION",
-        busId: "KA-01-AB-1234",
+        busId: "OD-02-AB-1234",
         lat: currentBusLocation.lat,
         lng: currentBusLocation.lng,
         timestamp: new Date().toISOString(),
@@ -45,7 +43,6 @@ export const broadcastBusLocation = (
 
   if (!wss) return;
 
-  // Broadcast Location
   wss.clients.forEach((client) => {
     if (client.readyState === WebSocket.OPEN) {
       client.send(
@@ -61,12 +58,11 @@ export const broadcastBusLocation = (
   });
 
   // --- GEOFENCING LOGIC ---
-  // Target Stop: Green Park Main Gate (12.9352, 77.6245)
-  const targetLat = 12.9352;
-  const targetLng = 77.6245;
+  // Target Stop: Master Canteen, Bhubaneswar (20.2961, 85.8245)
+  const targetLat = 20.2961;
+  const targetLng = 85.8245;
 
-  // Calculate distance in meters using Haversine formula
-  const R = 6371e3; // Earth radius in meters
+  const R = 6371e3;
   const φ1 = (lat * Math.PI) / 180;
   const φ2 = (targetLat * Math.PI) / 180;
   const Δφ = ((targetLat - lat) * Math.PI) / 180;
@@ -76,9 +72,8 @@ export const broadcastBusLocation = (
     Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
     Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  const distance = R * c; // Distance in meters
+  const distance = R * c;
 
-  // If bus is within 500 meters of the stop, send an alert!
   if (distance < 500 && !alertSent) {
     alertSent = true;
     console.log("🚨 Bus is approaching the stop! Sending alert...");
@@ -89,14 +84,13 @@ export const broadcastBusLocation = (
           JSON.stringify({
             type: "ALERT",
             message:
-              "🚌 Your child's bus is approaching the stop! ETA: 2 minutes.",
+              "🚌 Your child's bus is approaching Master Canteen! ETA: 2 minutes.",
           }),
         );
       }
     });
   }
 
-  // Reset the alert if the bus drives far away (so we can test it again)
   if (distance > 1000) {
     alertSent = false;
   }

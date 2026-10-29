@@ -13,11 +13,12 @@ export default function DetectRoutePage() {
     setIsDetecting(true);
     setError("");
 
-    // Simulating the parent's home address (Near Green Park)
-    const homeLat = 12.934;
-    const homeLng = 77.623;
+    // 1. Simulating a parent's home address near Master Canteen, Bhubaneswar
+    const homeLat = 20.29;
+    const homeLng = 85.82;
 
     try {
+      // 2. Connecting to the LIVE backend
       const response = await fetch(
         "https://school-bus-api-c3x7.onrender.com/api/v1/parents/detect-route",
         {
@@ -64,7 +65,7 @@ export default function DetectRoutePage() {
           <div className="flex gap-2">
             <input
               type="text"
-              value="Green Park, Bangalore (Demo)"
+              value="Master Canteen, Bhubaneswar (Demo)"
               disabled
               className="flex-1 p-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600"
             />

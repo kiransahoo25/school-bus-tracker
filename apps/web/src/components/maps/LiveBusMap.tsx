@@ -18,13 +18,15 @@ L.Icon.Default.mergeOptions({
 });
 
 export default function LiveBusMap() {
+  // 1. Initial starting location: Master Canteen, Bhubaneswar
   const [busLocation, setBusLocation] = useState<{ lat: number; lng: number }>({
-    lat: 12.9352,
-    lng: 77.6245,
+    lat: 20.2961,
+    lng: 85.8245,
   });
   const [alert, setAlert] = useState<string | null>(null);
 
   useEffect(() => {
+    // 2. Connect to the live backend WebSocket
     const ws = new WebSocket("wss://school-bus-api-c3x7.onrender.com/ws");
 
     ws.onmessage = (event) => {
@@ -36,7 +38,6 @@ export default function LiveBusMap() {
 
       if (data.type === "ALERT") {
         setAlert(data.message);
-        // Hide alert after 6 seconds
         setTimeout(() => setAlert(null), 6000);
       }
     };
@@ -65,7 +66,8 @@ export default function LiveBusMap() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           />
           <Marker position={[busLocation.lat, busLocation.lng]}>
-            <Popup>Bus KA-01-AB-1234 is here!</Popup>
+            {/* 3. Updated Popup Text */}
+            <Popup>Bus OD-02-AB-1234 is here!</Popup>
           </Marker>
         </MapContainer>
       </div>

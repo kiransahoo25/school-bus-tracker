@@ -95,3 +95,5 @@ export const broadcastBusLocation = (
     alertSent = false;
   }
 };
+// Export the WSS instance so the boarding controller can use it
+export const getWss = () => wss;

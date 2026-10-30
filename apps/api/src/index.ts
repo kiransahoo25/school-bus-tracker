@@ -8,7 +8,8 @@ import boardingRoutes from "./modules/boarding/boarding.routes";
 import parentsRoutes from "./modules/parents/parents.routes";
 import tripsRoutes from "./modules/trips/trips.routes";
 import telemetryRoutes from "./modules/telemetry/telemetry.routes"; // Import added
-import { setupWebSocket } from "./realtime/ws.server";
+import { setupWebSocket, getWss } from "./realtime/ws.server";
+import { setWssInstance } from "./modules/boarding/boarding.controller";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ const server = http.createServer(app);
 const PORT = process.env.PORT || 5000;
 
 setupWebSocket(server);
+setWssInstance(getWss());
 
 app.use(helmet());
 app.use(cors());

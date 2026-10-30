@@ -3,6 +3,7 @@ import { MapPin, Clock, CheckCircle2 } from "lucide-react";
 interface StudentStatusCardProps {
   studentName: string;
   grade: string;
+  section: string;
   routeName: string;
   stopName: string;
   status: "BOARDED" | "PENDING" | "DROPPED" | "ABSENT";
@@ -12,6 +13,7 @@ interface StudentStatusCardProps {
 export default function StudentStatusCard({
   studentName,
   grade,
+  section,
   routeName,
   stopName,
   status,
@@ -23,7 +25,7 @@ export default function StudentStatusCard({
         <div>
           <h3 className="text-lg font-bold text-gray-900">{studentName}</h3>
           <p className="text-sm text-gray-500">
-            Grade {grade} • {routeName}
+            Grade {grade}-{section} • {routeName || "No Route"}
           </p>
         </div>
         {status === "BOARDED" && (
@@ -47,7 +49,9 @@ export default function StudentStatusCard({
             <p className="text-sm font-medium text-gray-900">
               Pickup / Drop Stop
             </p>
-            <p className="text-sm text-gray-500">{stopName}</p>
+            <p className="text-sm text-gray-500">
+              {stopName || "Not Assigned"}
+            </p>
           </div>
         </div>
 
@@ -57,12 +61,6 @@ export default function StudentStatusCard({
             <span className="font-bold text-blue-600">{etaMinutes} mins</span>
           </div>
         )}
-      </div>
-
-      <div className="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-end">
-        <button className="text-sm font-medium text-blue-600 hover:text-blue-800">
-          View Live Map →
-        </button>
       </div>
     </div>
   );

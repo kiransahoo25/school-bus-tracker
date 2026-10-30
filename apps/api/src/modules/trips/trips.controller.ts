@@ -12,7 +12,7 @@ export const getTripStudents = async (req: Request, res: Response) => {
       FROM students s
       JOIN student_route_assignments sra ON s.id = sra.student_id
       JOIN routes r ON sra.route_id = r.id
-      WHERE r.name = 'Route 7 - Green Park'
+      WHERE r.name = 'Route 7 - Bhubaneswar'
     `);
 
     res.status(200).json({ success: true, data: result.rows });
